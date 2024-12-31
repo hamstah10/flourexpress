@@ -8,6 +8,8 @@ import 'jquery';
 import 'https://fonts.googleapis.com/css2?family=Knewave&display=swap';
 import './vendor/bootstrap/dist/css/bootstrap.min.css';
 import './styles/windmill.css';
+import './styles/lightbar.css';
+
 import './styles/lemminge.css';
 import './styles/bully.css';
 
@@ -20,5 +22,8 @@ console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
 
 window.$ = $;
 import { } from 'bootstrap';
+import './custom.js';
 
 //import './vendor/datatables/datatables.index.js';
+
+
