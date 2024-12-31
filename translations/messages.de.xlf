@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="de" target-language="de" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="HXK_ouC" resname="datatable.common.are_you_sure">
+        <source>datatable.common.are_you_sure</source>
+        <target>Bist du sicher?</target>
+      </trans-unit>
+      <trans-unit id="z6IJsLA" resname="datatable.common.you_need_to_select_at_least_one_element">
+        <source>datatable.common.you_need_to_select_at_least_one_element</source>
+        <target>Sie müssen mindestens ein Element auswählen.</target>
+      </trans-unit>
+      <trans-unit id="fJ38qTj" resname="datatable.common.search">
+        <source>datatable.common.search</source>
+        <target>Suchen</target>
+      </trans-unit>
+      <trans-unit id="Wkbt3HQ" resname="datatable.common.execute">
+        <source>datatable.common.execute</source>
+        <target>Ausführen</target>
+      </trans-unit>
+      <trans-unit id="ZGnRnId" resname="datatable.common.ok">
+        <source>datatable.common.ok</source>
+        <target>OK</target>
+      </trans-unit>
+      <trans-unit id="29q2TkQ" resname="datatable.datatable.searchPlaceholder">
+        <source>datatable.datatable.searchPlaceholder</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="Axfv9_k" resname="datatable.datatable.emptyTable">
+        <source>datatable.datatable.emptyTable</source>
+        <target>Keine Daten in der Tabelle vorhanden</target>
+      </trans-unit>
+      <trans-unit id="k.eFvRr" resname="datatable.datatable.info">
+        <source>datatable.datatable.info</source>
+        <target>_START_ bis _END_ von _TOTAL_ Einträgen</target>
+      </trans-unit>
+      <trans-unit id="tfg_E0q" resname="datatable.datatable.infoEmpty">
+        <source>datatable.datatable.infoEmpty</source>
+        <target>0 bis 0 von 0 Einträgen</target>
+      </trans-unit>
+      <trans-unit id="rVPg7yb" resname="datatable.datatable.infoFiltered">
+        <source>datatable.datatable.infoFiltered</source>
+        <target> (gefiltert von _MAX_ Einträgen)</target>
+      </trans-unit>
+      <trans-unit id="LEYvkFY" resname="datatable.datatable.infoPostFix">
+        <source>datatable.datatable.infoPostFix</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="7Ns2M3r" resname="datatable.datatable.infoThousands">
+        <source>datatable.datatable.infoThousands</source>
+        <target>.</target>
+      </trans-unit>
+      <trans-unit id="MxKRRx_" resname="datatable.datatable.lengthMenu">
+        <source>datatable.datatable.lengthMenu</source>
+        <target>_MENU_ Einträge anzeigen</target>
+      </trans-unit>
+      <trans-unit id="5L.4zWq" resname="datatable.datatable.loadingRecords">
+        <source>datatable.datatable.loadingRecords</source>
+        <target>Wird geladen...</target>
+      </trans-unit>
+      <trans-unit id="uAg6S3X" resname="datatable.datatable.processing">
+        <source>datatable.datatable.processing</source>
+        <target>Bitte warten...</target>
+      </trans-unit>
+      <trans-unit id="x38Wzw8" resname="datatable.datatable.search">
+        <source>datatable.datatable.search</source>
+        <target>Suchen</target>
+      </trans-unit>
+      <trans-unit id="Mj9z5U3" resname="datatable.datatable.zeroRecords">
+        <source>datatable.datatable.zeroRecords</source>
+        <target>Keine Einträge vorhanden.</target>
+      </trans-unit>
+      <trans-unit id="VWN4_qu" resname="datatable.datatable.paginate.first">
+        <source>datatable.datatable.paginate.first</source>
+        <target>Erste</target>
+      </trans-unit>
+      <trans-unit id="vvLgnPS" resname="datatable.datatable.paginate.last">
+        <source>datatable.datatable.paginate.last</source>
+        <target>Letzte</target>
+      </trans-unit>
+      <trans-unit id="6py8pZT" resname="datatable.datatable.paginate.next">
+        <source>datatable.datatable.paginate.next</source>
+        <target>Nächste</target>
+      </trans-unit>
+      <trans-unit id="vlgoAQt" resname="datatable.datatable.paginate.previous">
+        <source>datatable.datatable.paginate.previous</source>
+        <target>Vorherige</target>
+      </trans-unit>
+      <trans-unit id="ycuTz6p" resname="datatable.datatable.aria.sortAscending">
+        <source>datatable.datatable.aria.sortAscending</source>
+        <target>: zu aktivieren, um Spalte aufsteigend zu sortieren</target>
+      </trans-unit>
+      <trans-unit id="YtQz0Fv" resname="datatable.datatable.aria.sortDescending">
+        <source>datatable.datatable.aria.sortDescending</source>
+        <target>: zu aktivieren, um Spalte absteigend sortieren</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

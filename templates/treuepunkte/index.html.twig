@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Treuepunkte index{% endblock %}
+
+{% block body %}
+{% block content %}
+<div class="container mt-5">
+<div class="row">
+    <div class="col-md-12">
+    <div class="card shadow">
+					<div class="card-header d-flex justify-content-between align-items-center">
+						<h3 class="card-title">Treuepunkte</h3>
+                    <a href="{{ path('app_verkauf_new') }}" class="btn btn-secondary">Neuer Eintrag</a>
+
+                    </div>
+					<div class="card-body">
+{% endblock %}
+
+						<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Datum</th>
+                <th>Sorte</th>
+                <th>Menge</th>
+                <th>Erledigt</th>
+                <th>Aktionen</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for punkt in treuepunkteDetails %}
+            <tr>
+                <td>{{ punkt.id }}</td>
+                <td>{{ punkt.name }}</td>
+                <td>{{ punkt.datum|date('d.m.Y') }}</td>
+                <td>{{ punkt.sorte }} | {{ punkt.preis1g }}€/{{ punkt.preis05g }}€</td>
+                <td>{{ punkt.menge }}</td>
+                <td>{{ punkt.erledigt ? 'Ja' : 'Nein' }}</td>
+                <td>
+                    <a href="{{ path('app_treuepunkte_show', {'id': punkt.id}) }}">show</a>
+                    <a href="{{ path('app_treuepunkte_edit', {'id': punkt.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+
+    <a href="{{ path('app_treuepunkte_new') }}">Create new</a>
+    {% block contentend %}
+</div>
+<div class="card-footer">
+    <a href="{{ path('app_sorte_new') }}" class="btn btn-primary">Neue Sorte</a>
+</div>
+</div>
+</div>
+</div></div>
+{% endblock %}
+{% endblock %}

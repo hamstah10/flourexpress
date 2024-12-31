@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Verkauf index{% endblock %}
+
+{% block body %}
+{% block content %}
+<div class="container mt-5">
+<div class="row">
+    <div class="col-md-12">
+    <div class="card shadow">
+					<div class="card-header d-flex justify-content-between align-items-center">
+						<h3 class="card-title">Verkauf</h3>
+                    <a href="{{ path('app_verkauf_new') }}" class="btn btn-secondary">Neuer Eintrag</a>
+
+                    </div>
+					<div class="card-body">
+{% endblock %}
+    
+   
+
+<table class="table">
+<thead>
+    <tr>
+        
+        <th>Datum</th>
+        <th>Sorte</th>
+        <th>Fahrer</th>
+       
+        <th>Anzahl - 1g</th>
+        <th>Anzahl - 0.5g</th>
+        <th>Anzahl - Gesamt</th>
+        <th>Aktionen</th>
+    </tr>
+</thead>
+<tbody>
+{% for verkauf in verkaufDetails %}
+    <tr>
+       
+        <td>{{ verkauf.datum|date('d.m.Y') }}</td>
+        <td>{{ verkauf.sorte }}</td>
+        <td>{{ verkauf.fahrer }}</td>
+       
+        <td>{{ verkauf.menge1g }}</td>
+        <td>{{ verkauf.menge05g }} </td>
+        <td>{{ verkauf.gesamtGramm }}</td>
+        <td>
+            <a href="{{ path('app_verkauf_show', {'id': verkauf.id}) }}">show</a>
+            <a href="{{ path('app_verkauf_edit', {'id': verkauf.id}) }}">edit</a>
+        </td>
+    </tr>
+{% endfor %}
+</tbody>
+</table>
+
+
+    {% block contentend %}
+</div>
+<div class="card-footer">
+			
+    <a href="{{ path('app_sorte_new') }}" class="btn btn-primary">Neue Sorte</a>
+</div>
+</div>
+</div>
+</div></div>
+{% endblock %}
+{% endblock %}

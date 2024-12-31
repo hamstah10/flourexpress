@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% block content %}
+<div class="container mt-5">
+<div class="row">
+    <div class="col-md-12">
+    <div class="card shadow">
+					<div class="card-header">
+						<h3 class="card-title">Umsatzübersicht</h3>
+                    </div>
+					<div class="card-body">
+{% endblock %}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Datum</th>
+            <th>Fahrer</th>
+            <th>Sorte</th>
+            <th class="text-center">Menge 1g</th>
+            <th class="text-center">Menge 0.5g</th>
+            <th class="text-end">Einnahmen</th>
+            <th class="text-end">Fahrerkosten</th>
+            <th class="text-end">Gewinn</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        {% for detail in verkaufDetails %}
+            <tr>
+                <td>{{ detail.datum|date('d.m.Y') }}</td>
+                <td>{{ detail.fahrer }}</td>
+                <td>{{ detail.sorte }}</td>
+                <td class="text-center">{{ detail.menge1g }}</td>
+                <td class="text-center">{{ detail.menge05g }}</td>
+                <td class="text-end">{{ detail.einnahmen|number_format(2, ',', '.') }}€</td>
+                <td class="text-end">{{ detail.fahrerkosten|number_format(2, ',', '.') }}€</td>
+                <td class="text-end">{{ detail.gewinnProVerkauf|number_format(2, ',', '.') }}€</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot class="table-group-divider">
+        <tr>
+            <td colspan="5"><strong>Gesamt:</strong></td>
+            <td class="text-end"><strong>{{ gesamtEinnahmen|number_format(2, ',', '.') }}€</strong></td>
+	
+            <td class="text-end"><strong>{{ gesamtFahrerkosten|number_format(2, ',', '.') }}€</strong></td>
+            <td class="text-end"><strong>{{ gesamterGewinn|number_format(2, ',', '.') }}€</strong></td>
+        </tr>
+    </tfoot>
+</table>
+
+    <h2>Gesamtgewinn: {{ gesamterGewinn }}</h2>
+        {% block contentend %}
+    </div>
+    <div class="card-footer">
+        <a href="{{ path('app_sorte_new') }}" class="btn btn-primary">Neue Sorte</a>
+    </div>
+    </div>
+    </div>
+    </div></div>
+  
+    <!-- Insert this where you want the table to appear -->
+<div id="presidents">Loading...</div>
+
+<!-- Insert this at the end of your body element, but before the closing tag -->
+<script src="{{ asset('bundles/datatables/js/datatables.js') }}"></script>
+<script>
+$(function() {
+    $('#presidents').initDataTables({{ datatable_settings(datatable) }});
+});
+</script
+    {% endblock %}
+{% endblock %}
+

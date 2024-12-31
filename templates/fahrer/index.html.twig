@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fahrer index{% endblock %}
+
+{% block body %}
+{% block content %}
+<div class="container mt-5">
+<div class="row">
+    <div class="col-md-12">
+    <div class="card shadow">
+    <div class="card-header d-flex justify-content-between align-items-center">
+            <h3 class="card-title">Fahrer</h3>
+        <a href="{{ path('app_fahrer_new') }}" class="btn btn-secondary">Neuer Fahrer</a>
+
+                    </div>
+					<div class="card-body">
+{% endblock %}
+    
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Verguetung1g</th>
+                <th>Verguetung05g</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for fahrer in fahrers %}
+            <tr>
+                <td>{{ fahrer.id }}</td>
+                <td>{{ fahrer.name }}</td>
+                <td>{{ fahrer.verguetung1g|number_format(2, ',', '.') }}€</td>
+                <td>{{ fahrer.verguetung05g|number_format(2, ',', '.') }}€</td>
+                <td>
+                    <a href="{{ path('app_fahrer_show', {'id': fahrer.id}) }}">show</a>
+                    <a href="{{ path('app_fahrer_edit', {'id': fahrer.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% block contentend %}
+</div>
+<div class="card-footer">
+    <a href="{{ path('app_sorte_new') }}" class="btn btn-primary">Neue Sorte</a>
+</div>
+</div>
+</div>
+</div></div>
+{% endblock %}
+{% endblock %}

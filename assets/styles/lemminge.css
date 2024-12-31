@@ -1,0 +1,71 @@
+#lemming1 {
+ 
+   
+    display: block;
+    
+    animation:10s linear;
+    animation-name:run;
+  }
+  @-webkit-keyframes run {
+    0% {
+      left: 0;
+    }
+    48% {
+      -webkit-transform: rotateY(0deg); 
+    }
+    50% { 
+      left: 50%;
+      -webkit-transform: rotateY(180deg); 
+    }
+    98% {
+      -webkit-transform: rotateY(180deg); 
+    }
+    100% {
+      left: 0;    
+       -webkit-transform: rotateY(0deg);
+    }
+  }
+  
+  @keyframes slideright {
+      from {
+          margin-left: 0%;
+      }
+      to {
+          margin-left: 80%;
+      }
+  }
+  
+  @keyframes move-horizontal {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+  .global-reflection {
+  -webkit-box-reflect: below -20px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(30%, transparent), to(rgba(255,255,255,0.3)));
+    
+  }
+  
+  .lemming-march, .lemming-fall, .lemming-para-open, .lemming-para, .lemming-die {
+    width: 48px;
+    height: 48px;
+    float: left;
+    }
+  .lemming-march {
+    background-image: url(http://www.mattdrew.co.uk/experiments/images/ex-lemmings/lemming-march.gif);
+  }
+  .lemming-fall {
+    background-image: url(http://www.mattdrew.co.uk/experiments/images/ex-lemmings/lemming-fall.gif); 
+  }
+  .lemming-para-open {
+    background-image: url(http://www.mattdrew.co.uk/experiments/images/ex-lemmings/lemming-para-open.gif);
+  }
+  .lemming-para {
+    background-image: url(http://www.mattdrew.co.uk/experiments/images/ex-lemmings/lemming-para.gif);
+  }
+  .lemming-die {
+    background-image: url(http://www.mattdrew.co.uk/experiments/images/ex-lemmings/lemming-die.gif);
+  }
+  

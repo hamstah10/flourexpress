@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+        <a class="navbar-brand knewave-regular" href="{{ path('app_start') }}"><img src="{{ asset('images/windmill.svg') }}" height="30"> FlourExpress</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ms-auto">
+            {% if app.user %}
+            <li class="nav-item">
+        <a class="nav-link" href="{{ path('app_sorte_index') }}">{{ ux_icon('tabler:wheat', {height: '20px', width: '20px', 'aria-hidden': true}) }} Sorte</a>
+    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_einkauf_index') }}"><img src="{{ asset('images/purchase.svg') }}" height="20"> Einkauf</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_verkauf_index') }}"><img src="{{ asset('images/sack.svg') }}" height="20"> Verkauf</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="{{ path('app_fahrer_index') }}" data-bs-toggle="dropdown" aria-expanded="false" role="button">
+                        <img src="{{ asset('images/driver.svg') }}" height="20"> Fahrer
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ path('fahrer') }}">Fahrer</a></li>
+                        <li><a class="dropdown-item" href="{{ path('fahrer_verguetung') }}">Fahrervergütungen</a></li>
+                       
+                    </ul>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('statistik') }}"><img src="{{ asset('images/statistic.svg') }}" height="20"> Statistiken</a>
+                </li>
+                <li class="nav-item">
+            <a class="nav-link" href="{{ path('umsatz') }}">{{ ux_icon('tabler:chart-column', {height: '20px', width: '20px', 'aria-hidden': true}) }} Umsatz</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_treuepunkte_index') }}">{{ ux_icon('tabler:credit-card', {height: '20px', width: '20px', 'aria-hidden': true}) }} Treuepunkte</a>
+        </li>
+    {% endif %}
+        <li class="nav-item">
+        {% if app.user %}
+            <a class="nav-link" href="{{ path('app_logout') }}">{{ ux_icon('tabler:login', {height: '20px', width: '20px', 'aria-hidden': true}) }} Logout</a>
+				{% else %}
+            <a class="nav-link" href="{{ path('app_logout') }}">{{ ux_icon('tabler:login-2', {height: '20px', width: '20px', 'aria-hidden': true}) }} Login</a>
+
+            {% endif %}
+        </li>
+            </ul>
+        </div>
+    </div>
+</nav>

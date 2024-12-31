@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sorte index{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+	<div class="row">
+		<div class="col-md-12">
+				<div class="card shadow">
+					<div class="card-header d-flex justify-content-between align-items-center">
+						<h3 class="card-title">Sorte</h3>
+                    <a href="{{ path('app_sorte_new') }}" class="btn btn-primary">Neue Sorte</a>
+
+                    </div>
+					<div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th class="text-center">Preis/kg</th>
+                                    <th class="text-center">Verkaufspreis je 1g</th>
+                                    <th class="text-center">Verkaufspreis je 0,5g</th>
+                                    <th>#</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for sorte in sortes %}
+                                <tr>
+                                    <td>{{ sorte.id }}</td>
+                                    <td>{{ sorte.name }}</td>
+                                    <td class="text-center">{{ sorte.einkaufspreisProKg }} {{ 'EUR'|currency_symbol }}</td>
+                                    <td class="text-center">{{ sorte.verkaufspreis1g|number_format(2, '.', ',') }} {{ 'EUR'|currency_symbol }}</td>
+                                    <td class="text-center">{{ sorte.verkaufspreis05g|number_format(2, '.', ',') }} {{ 'EUR'|currency_symbol }}</td>
+                                    <td  class="text-end">
+                                        <a href="{{ path('app_sorte_show', {'id': sorte.id}) }}" class="btn btn-secondary"><i class="fa-solid fa-eye"></i> show</a>
+                                        <a href="{{ path('app_sorte_edit', {'id': sorte.id}) }}" class="btn btn-info">edit</a>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="6">no records found</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+					
+				</div>
+    
+
+    
+
+			</div>
+		</div>
+	</div>
+{% endblock %}

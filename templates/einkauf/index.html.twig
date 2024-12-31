@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Einkauf index{% endblock %}
+
+{% block body %}
+{% block content %}
+<div class="container mt-5">
+<div class="row">
+    <div class="col-md-12">
+    <div class="card shadow">
+					<div class="card-header d-flex justify-content-between align-items-center">
+						<h3 class="card-title">Einkauf</h3>
+                    </div>
+					<div class="card-body">
+{% endblock %}
+    
+
+<table class="table">
+<thead>
+    <tr>
+        <th>ID</th>
+        <th>Datum</th>
+        <th>Sorte</th>
+        <th>Menge (kg)</th>
+        <th>Einkaufspreis/kg</th>
+        <th>Aktionen</th>
+    </tr>
+</thead>
+<tbody>
+{% for einkauf in einkaufDetails %}
+    <tr>
+        <td>{{ einkauf.id }}</td>
+        <td>{{ einkauf.datum|date('d.m.Y') }}</td>
+        <td>{{ einkauf.sorte }}</td>
+        <td>{{ einkauf.menge }}</td>
+        <td>{{ einkauf.einkaufspreis|number_format(2, ',', '.') }}€</td>
+        <td>
+            <a href="{{ path('app_einkauf_show', {'id': einkauf.id}) }}">show</a>
+            <a href="{{ path('app_einkauf_edit', {'id': einkauf.id}) }}">edit</a>
+        </td>
+    </tr>
+{% endfor %}
+</tbody>
+</table>
+
+
+    <a href="{{ path('app_einkauf_new') }}">Create new</a>
+    {% block contentend %}
+</div>
+<div class="card-footer">
+    <a href="{{ path('app_sorte_new') }}" class="btn btn-primary">Neue Sorte</a>
+</div>
+</div>
+</div>
+</div></div>
+{% endblock %}
+{% endblock %}

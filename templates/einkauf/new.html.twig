@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Einkauf{% endblock %}
+
+{% block body %}
+{% block content %}
+<div class="container mt-5">
+<div class="row">
+    <div class="col-md-12">
+    <div class="card shadow">
+					<div class="card-header d-flex justify-content-between align-items-center">
+						<h3 class="card-title">Einkauf</h3>
+                    </div>
+					<div class="card-body">
+{% endblock %}
+    <h1>Create new Einkauf</h1>
+
+    {{ include('einkauf/_form.html.twig') }}
+
+    <a href="{{ path('app_einkauf_index') }}">back to list</a>
+    {% block contentend %}
+</div>
+<div class="card-footer">
+    <a href="{{ path('app_sorte_new') }}" class="btn btn-primary">Neue Sorte</a>
+</div>
+</div>
+</div>
+</div></div>
+{% endblock %}
+{% endblock %}

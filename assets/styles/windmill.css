@@ -1,0 +1,209 @@
+.windmill {
+	display: grid;
+	position: relative;
+    
+}
+.windmill > .blades {
+	justify-self: center;
+	position: absolute;
+	width: 100%;
+	aspect-ratio: 1;
+	display: grid;
+	top: -46.5%;
+	place-items: center;
+	animation: rotateBlades 20s linear infinite;
+}
+@keyframes rotateBlades {
+	to {
+		transform: rotate(360deg);
+	}
+}
+.windmill > .blades > * {
+	--c1: rgb(65, 40, 25);
+	--c2: #b3a8a2;
+	grid-area: 1/1;
+}
+.windmill > .blades > .center {
+	width: 6%;
+	aspect-ratio: 1;
+	background-color: var(--c1);
+	background-image: radial-gradient(var(--c2) 20%, var(--c1) 0);
+	border-radius: 50%;
+	z-index: 1;
+}
+.windmill > .blades > .blade {
+	background-color: var(--c1);
+	height: 100%;
+	width: 2%;
+	display: grid;
+	position: relative;
+	border-radius: 0.5vmin;
+}
+.windmill > .blades > .blade:last-child {
+	transform: rotate(90deg);
+}
+.windmill > .blades > .blade::before,
+.windmill > .blades > .blade::after {
+	content: "";
+	position: absolute;
+	width: 500%;
+	height: 35%;
+	background: linear-gradient(
+			to right,
+			var(--c1) 8%,
+			transparent 0 96%,
+			var(--c1) 0
+		),
+		linear-gradient(var(--c1) 2%, transparent 0 98%, var(--c1) 0),
+		linear-gradient(transparent 40%, hsl(0 0% 0% / 0.125) 0 60%, transparent 0)
+			center / 2% 5%,
+		linear-gradient(
+				90deg,
+				transparent 40%,
+				hsl(0 0% 0% / 0.125) 0 60%,
+				transparent 0
+			)
+			center / 20% 80% var(--c2);
+}
+.windmill > .blades > .blade::before {
+	left: 100%;
+	top: 1%;
+}
+.windmill > .blades > .blade::after {
+	right: 100%;
+	bottom: 1%;
+}
+
+.windmill > .building {
+	height: 75vmin;
+	aspect-ratio: 0.5;
+	display: grid;
+	grid-template-rows: 1fr 4fr 1.25fr;
+}
+
+.windmill > .building > .top {
+	--c1: #513e37;
+	--c2: #77594e;
+	grid-column: 1/-1;
+	background-color: var(--c1);
+	width: 75%;
+	justify-self: center;
+	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+	background-image: radial-gradient(
+		circle at top left,
+		var(--c2) 50%,
+		#fff0 55%
+	);
+}
+
+.windmill > .building > .middle {
+	--deg1: 8deg;
+	--deg2: 4deg;
+	--stop1: calc(90deg - var(--deg1));
+	--stop2: calc(90deg - var(--deg2));
+	--size: /50% 100% no-repeat;
+	--c1: #fcf7fb;
+	--c2: #f3eded;
+	--c3: #e0d6d5;
+	--ct: #fff0 0;
+	background: conic-gradient(
+				from 270deg at 50% 100%,
+				var(--c2) var(--stop2),
+				var(--ct)
+			)
+			right var(--size),
+		conic-gradient(from 270deg at 100% 100%, var(--c3) var(--stop1), var(--ct))
+			right var(--size),
+		conic-gradient(
+				from var(--deg2) at 50% 100%,
+				var(--c2) var(--stop2),
+				var(--ct)
+			)
+			left var(--size),
+		conic-gradient(from var(--deg1) at 0% 100%, var(--c1) var(--stop1), var(--ct))
+			left var(--size),
+		linear-gradient(var(--c2) 100%, #fff0) center / 50% 100% no-repeat;
+	display: grid;
+	padding-top: 40%;
+	justify-items: center;
+}
+.windmill > .building > .middle > .window {
+	--c1: #050201;
+	--c2: #77594e;
+	--c3: #fcf7fb;
+	height: 45%;
+	aspect-ratio: 1.5;
+	background: linear-gradient(var(--c1) 8%, #fff0 0 92%, var(--c1) 0) center /
+			52% 100% no-repeat,
+		linear-gradient(
+			90deg,
+			var(--c2) 25%,
+			#fff0 0 48%,
+			var(--c1) 0 52%,
+			#fff0 0 75%,
+			var(--c2) 0
+		),
+		var(--c3);
+}
+.windmill > .building > .bottom {
+	background: linear-gradient(90deg, #77594e 25%, #513e37 0 75%, #3c2b23 0);
+	display: grid;
+}
+
+.windmill > .building > .bottom > .door {
+	--c1: #050201;
+	--c2: #77594e;
+	place-self: end center;
+	height: 60%;
+	aspect-ratio: 0.75;
+	background: linear-gradient(90deg, var(--c2) 10%, #fff0 0 90%, var(--c2) 0),
+		linear-gradient(var(--c2) 7.5%, #fff0 0), var(--c1);
+}
+
+.wind-mill {
+    display: grid;
+	place-items: center;
+}
+
+
+#Rotate-windmill
+{
+    animation: windmill 7s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+#Cloud-right{
+    animation: cloud-r 7s infinite linear;
+}
+
+#Cloud-left{
+    animation: cloud-l 10s infinite linear;
+}
+
+@keyframes windmill{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes cloud-r{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-500px);
+    }
+}
+
+@keyframes cloud-l{
+    0%{
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(500px);
+    }
+}

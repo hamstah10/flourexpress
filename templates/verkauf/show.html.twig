@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Verkauf{% endblock %}
+
+{% block body %}
+{% block content %}
+<div class="container mt-5">
+<div class="row">
+    <div class="col-md-12">
+    <div class="card shadow">
+					<div class="card-header d-flex justify-content-between align-items-center">
+						<h3 class="card-title">Einkauf</h3>
+                    </div>
+					<div class="card-body">
+{% endblock %}
+    <h1>Verkauf</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ verkauf.id }}</td>
+            </tr>
+            <tr>
+                <th>Menge1g</th>
+                <td>{{ verkauf.menge1g }}</td>
+            </tr>
+            <tr>
+                <th>Menge05g</th>
+                <td>{{ verkauf.menge05g }}</td>
+            </tr>
+            <tr>
+                <th>Datum</th>
+                <td>{{ verkauf.datum ? verkauf.datum|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_verkauf_index') }}">back to list</a>
+
+    <a href="{{ path('app_verkauf_edit', {'id': verkauf.id}) }}">edit</a>
+
+    {{ include('verkauf/_delete_form.html.twig') }}
+    {% block contentend %}
+</div>
+<div class="card-footer">
+    <a href="{{ path('app_sorte_new') }}" class="btn btn-primary">Neue Sorte</a>
+</div>
+</div>
+</div>
+</div></div>
+{% endblock %}
+{% endblock %}

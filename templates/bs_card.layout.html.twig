@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+<div class="container mt-5">
+	<div class="row">
+		<div class="col-md-12">
+				< class="card">
+					<div class="card-header">
+						<h3 class="card-title">Sorte</h3>
+                    </div>
+					<div class="card-body">
+                    {% block body %}
+
+                    {% endblock %}
+                    </div>
+                
+                <div class="card-footer">
+                    <a href="{{ path('app_sorte_new') }}" class="btn btn-primary">Neue Sorte</a>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
