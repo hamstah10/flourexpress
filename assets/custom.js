@@ -1,7 +1,8 @@
 $( document ).ready(function() {
    
-
     $('#default').on('click', function(){
+      console.log('lichter');
+
         $('.light').attr('class', 'light');
         $('button').removeClass('active');
         $(this).addClass('active');
@@ -13,6 +14,7 @@ $( document ).ready(function() {
       });
       
       $('#alt').on('click', function(){
+        console.log('alt');
         $('button').removeClass('active');
         $(this).addClass('active');
         $('.light').attr('class', 'light');
@@ -88,3 +90,10 @@ $( document ).ready(function() {
       })
       
     });
+
+    var clickMe = document.querySelector('#default');
+
+// This will run when the .click-me element is clicked
+clickMe.addEventListener('click', function (event) {
+	console.log('click');
+});
